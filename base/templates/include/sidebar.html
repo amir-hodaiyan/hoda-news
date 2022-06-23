@@ -1,0 +1,61 @@
+{% load home_tag i18n %}
+{% if most_view_news or most_view_video %}
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 lang_bidi">
+        <div class="sidebar sidebar-right">
+            {% if most_view_news %}
+                <div class="widget color-orange">
+                    <h3 class="block-title"><span>{% trans 'Popular news' %}</span></h3>
+                    <div class="list-post-block">
+                        <ul class="list-post">
+                            {% for most_view in most_view_news %}
+                                <li class="clearfix">
+                                    <div class="post-block-style post-float clearfix">
+                                        <div class="post-thumb">
+                                            <a href="{{ most_view.get_absolute_url }}">
+                                                <img class="img-responsive border-red" src="{{ most_view.image.url }}" alt="PIC">
+                                            </a>
+                                        </div>
+                                        <div class="post-content">
+                                            <h2 class="post-title title-small" style="text-align:initial">
+                                                <a href="{{ most_view.get_absolute_url }}"> {{ most_view.title }}</a>
+                                            </h2>
+                                            <div class="post-meta">
+                                                <span class="post-date">{% jalali_date most_view.updated LANGUAGE_CODE %}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if most_view_video %}
+                <div class="widget color-dark-blue">
+                    <h3 class="block-title"><span>{% trans 'Popular news movies' %}</span></h3>
+                    <div class="list-post-block">
+                        <ul class="list-post">
+                            {% for video in most_view_video %}
+                                <li class="clearfix">
+                                    <div class="post-block-style post-float clearfix">
+                                        <div class="post-thumb">
+                                            <a href="{{ video.get_absolute_url }}">
+                                                <img class="img-responsive border-red" src="{{ video.poster_video.url }}" alt="{{ video.title_video }}">
+                                            </a>
+                                        </div>
+                                        <div class="post-content">
+                                            <h2 class="post-title title-small" style="text-align: initial">
+                                                <a href="{{ video.get_absolute_url }}">{{ video.title_video }}</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

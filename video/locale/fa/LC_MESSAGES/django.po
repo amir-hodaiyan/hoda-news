@@ -1,0 +1,197 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-20 09:30+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\admin.py:10
+msgid "Convert to important videos"
+msgstr "تبدیل به ویدیوی مهم"
+
+#: .\admin.py:13
+msgid "Selected videos have become important."
+msgstr "ویدیوهای انتخابی به ویدیوهای مهم تبدیل شدند."
+
+#: .\admin.py:16
+msgid "Convert to normal videos"
+msgstr "تبدیل به ویدیوی عادی"
+
+#: .\admin.py:19
+msgid "Selected videos have become normal."
+msgstr "ویدیوهای انتخابی به ویدیوهای عادی تبدیل شدند."
+
+#: .\admin.py:22
+msgid "Convert to publish videos"
+msgstr " تبدیل به ویدیوی منتشر شده"
+
+#: .\admin.py:25
+msgid "Selected videos were published."
+msgstr "ویدیوهای انتخابی منتشر شدند"
+
+#: .\admin.py:28
+msgid "Convert to draft videos"
+msgstr "تبدیل به ویدیوی پیش‌نویس"
+
+#: .\admin.py:31
+msgid "Selected videos were drafted."
+msgstr "ویدیوهای انتخابی پیش‌نویس شدند"
+
+#: .\admin.py:34
+msgid "Copy videos"
+msgstr "کپی کردن ویدیوها"
+
+#: .\admin.py:46
+msgid "Selected videos were copied."
+msgstr "ویدیوهای انتخابی منتشر شدند"
+
+#: .\admin.py:61
+msgid "important-video"
+msgstr " ویدیوهای مهم"
+
+#: .\apps.py:8
+msgid "video news"
+msgstr "خبرهای ویدیویی"
+
+#: .\models.py:14
+msgid "publish"
+msgstr "انتشار"
+
+#: .\models.py:15
+msgid "draft"
+msgstr "پیش‌نویس"
+
+#: .\models.py:19
+msgid "configs"
+msgstr "تنظیمات"
+
+#: .\models.py:20
+msgid "config"
+msgstr "تنظیمات"
+
+#: .\models.py:23
+msgid "Most viewed"
+msgstr "پربازدیدترین ها"
+
+#: .\models.py:24
+msgid "Number of videos in the most viewed."
+msgstr "تعداد ویدیوها در پربازدیدترین ها"
+
+#: .\models.py:25
+msgid "Every Page"
+msgstr "هر صفحه"
+
+#: .\models.py:26
+msgid "Number of videos in the every page."
+msgstr "تعداد ویدیوهای هر صفحه"
+
+#: .\models.py:27 .\models.py:61
+msgid "Status"
+msgstr "وضعیت انتشار"
+
+#: .\models.py:37
+msgid "Main"
+msgstr "اصلی"
+
+#: .\models.py:38
+msgid "subsidiary1"
+msgstr "فرعی1"
+
+#: .\models.py:39
+msgid "subsidiary2"
+msgstr "فرعی2"
+
+#: .\models.py:40
+msgid "subsidiary3"
+msgstr "فرعی3"
+
+#: .\models.py:41
+msgid "subsidiary4"
+msgstr "فرعی4"
+
+#: .\models.py:45
+msgid "News movies"
+msgstr "خبر ویدیویی"
+
+#: .\models.py:46
+msgid "News movie"
+msgstr "خبر ویدیویی"
+
+#: .\models.py:50
+msgid "Title video"
+msgstr "عنوان ویدیو"
+
+#: .\models.py:51
+msgid "Slug video"
+msgstr "شناسه ویدیو"
+
+#: .\models.py:52
+msgid "Description video"
+msgstr "توضیحات ویدیو"
+
+#: .\models.py:53
+msgid "Poster Video"
+msgstr "پوستر فیلم"
+
+#: .\models.py:54
+msgid "Video"
+msgstr "ویدیو"
+
+#: .\models.py:55
+msgid "Category"
+msgstr "دسته‌بندی"
+
+#: .\models.py:56
+msgid "Visit"
+msgstr "بازدید"
+
+#: .\models.py:57
+msgid "Updated date"
+msgstr " تاریخ بروزرسانی"
+
+#: .\models.py:58
+msgid "Created date"
+msgstr "تاریخ ایجاد"
+
+#: .\models.py:59
+msgid "Important videos"
+msgstr "ویدیوهای مهم"
+
+#: .\models.py:60
+msgid "Position"
+msgstr "موقعیت"
+
+#: .\models.py:86
+msgid "thumbnail"
+msgstr "تصویر بندانگشتی"
+
+#: .\models.py:87 .\templates\video\detail_video_page.html:23
+msgid "visit"
+msgstr "بازدید"
+
+#: .\models.py:88
+msgid "Publication date"
+msgstr "تاریخ انتشار"
+
+#: .\models.py:89
+msgid "category"
+msgstr "دسته‌بندی"
+
+#: .\templates\video\category_video_page.html:3
+msgid "Video news"
+msgstr "خبرهای ویدیویی"
+
+#: .\templates\video\category_video_page.html:131
+#: .\templates\video\detail_video_page.html:65
+msgid "Most viewed video"
+msgstr "پربازدیدترین ویدیوها"
+
+#: .\templates\video\detail_video_page.html:49
+msgid "receive"
+msgstr "دریافت"

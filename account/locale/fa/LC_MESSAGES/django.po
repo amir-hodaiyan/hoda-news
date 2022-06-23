@@ -1,0 +1,246 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-19 17:53+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\apps.py:8
+msgid "Account"
+msgstr "حساب‌ کاربری"
+
+#: .\config.py:5
+msgid "site management"
+msgstr "مدیریت سایت"
+
+#: .\config.py:6 .\templates\account\forget_password\password_reset_don.html:8
+msgid "home"
+msgstr "خانه"
+
+#: .\templates\account\change_password\change_password.html:2
+#: .\templates\account\change_password\change_password.html:6
+msgid "Change Password"
+msgstr "تغییر گذرواژه"
+
+#: .\templates\account\change_password\change_password.html:9
+msgid "old password:"
+msgstr "گذرواژه قدیمی"
+
+#: .\templates\account\change_password\change_password.html:11
+msgid "Enter the old password."
+msgstr "گذرواژه قدیمی را وارد کنید"
+
+#: .\templates\account\change_password\change_password.html:16
+msgid "new password:"
+msgstr "گذرواژه جدید"
+
+#: .\templates\account\change_password\change_password.html:18
+msgid "Enter the new password."
+msgstr "گذرواژه جدید را وارد کنید."
+
+#: .\templates\account\change_password\change_password.html:23
+msgid "new password confirm:"
+msgstr "تکرار گذرواژه"
+
+#: .\templates\account\change_password\change_password.html:25
+msgid "Enter the new password confirmation."
+msgstr "گذرواژه جدید خود را دوباره وارد کنید."
+
+#: .\templates\account\change_password\change_password_done.html:2
+msgid "Account password changed."
+msgstr "رمز حساب کاربری تغییر کرد."
+
+#: .\templates\account\change_password\change_password_done.html:5
+msgid "Password changed successfully.go to"
+msgstr "گذرواژه با موفقیت تغییر کرد.رفتن به "
+
+#: .\templates\account\change_password\change_password_done.html:7
+msgid "home page"
+msgstr "صفحه اصلی"
+
+#: .\templates\account\forget_password\password_reset.html:2
+msgid "Reset password"
+msgstr "بازنشانی گذرواژه"
+
+#: .\templates\account\forget_password\password_reset.html:5
+msgid "Reset password:"
+msgstr "بازنشانی گذرواژه:"
+
+#: .\templates\account\forget_password\password_reset.html:7
+msgid ""
+"Enter the email address you registered with to receive the password reset "
+"link."
+msgstr ""
+"نشانی ایمیلی که با آن ثبت نام کردید را وارد کنید تا لینک بازنشانی گذرواژه را "
+"دریافت کنید."
+
+#: .\templates\account\forget_password\password_reset.html:9
+msgid "Enter your email address."
+msgstr "نشانی ایمیل خود را وارد کنید."
+
+#: .\templates\account\forget_password\password_reset.html:18
+msgid "Error!"
+msgstr "خطا!"
+
+#: .\templates\account\forget_password\password_reset_complete.html:2
+msgid "Password reset complete."
+msgstr "بازنشانی گذرواژه کامل شد."
+
+#: .\templates\account\forget_password\password_reset_complete.html:4
+msgid "Password changed :)"
+msgstr "تغییر گذرواژه (:"
+
+#: .\templates\account\forget_password\password_reset_complete.html:5
+msgid "Your account password changed successfully."
+msgstr "گذرواژه شما با موفقیت تغییر کرد."
+
+#: .\templates\account\forget_password\password_reset_complete.html:6
+msgid "go to"
+msgstr "رفتن به"
+
+#: .\templates\account\forget_password\password_reset_complete.html:7
+msgid "account."
+msgstr "حساب ‌کاربری"
+
+#: .\templates\account\forget_password\password_reset_confirm.html:2
+msgid "Reset Password"
+msgstr "بازیابی گذرواژه"
+
+#: .\templates\account\forget_password\password_reset_confirm.html:8
+msgid ""
+"Password reset link is invalid.This link may have been used before, or you "
+"entered it incorrectly. Please request a new password reset."
+msgstr ""
+"لینک بازنشانی گذرواژه نامعتبر است.شاید این لینک قبلا استفاده شده و یا آن‌را "
+"اشتباه وارد کرده‌اید."
+
+#: .\templates\account\forget_password\password_reset_don.html:2
+msgid "Password recovery"
+msgstr "بازنشانی گذرواژه"
+
+#: .\templates\account\forget_password\password_reset_don.html:4
+msgid "Password recovery email sent."
+msgstr "ایمیل بازنسانی گذرواژه ارسال شد."
+
+#: .\templates\account\forget_password\password_reset_don.html:6
+msgid ""
+"An email containing a password reset link has been sent to you.Click on the "
+"link to be redirected to the password reset page."
+msgstr ""
+"یک ایمیل حاوی لینک بازنشانی گذرواژه برایتان ارسال شد. روی لینک کنید تا به "
+"صفحه بازنشانی گذرواژه هدایت شوید."
+
+#: .\templates\account\forget_password\password_reset_don.html:7
+msgid "Go to "
+msgstr "رفتن به "
+
+#: .\templates\account\forget_password\password_reset_email.html:3
+msgid ""
+"We have received a password recovery request from you If you do not remember "
+"your password or you want to change your password, click on the link below."
+msgstr ""
+"ما یک درخواست بازیابی گذرواژه از شما دریافت کرده‌ایم اگر گذرواژه را فراموش "
+"کرده‌اید یا می خواهید گذرواژه خود را تغییر دهید، روی لینک زیر کلیک کنید."
+
+#: .\templates\account\forget_password\password_reset_email.html:9
+msgid "Your username: "
+msgstr "نام کاربری شما:"
+
+#: .\templates\account\forget_password\password_reset_form.html:4
+msgid "Create a new password"
+msgstr "ایجاد گذرواژه جدید"
+
+#: .\templates\account\forget_password\password_reset_form.html:6
+msgid ""
+"Please enter your new password twice to make sure you entered it correctly."
+msgstr ""
+"لطفاً گذرواژه جدید خود را دوباره وارد کنید تا مطمئن شویم که آن را به درستی "
+"وارد کرده‌اید."
+
+#: .\templates\account\forget_password\password_reset_form.html:12
+msgid "Password"
+msgstr "گذرواژه"
+
+#: .\templates\account\forget_password\password_reset_form.html:21
+msgid "Password confirm"
+msgstr "تایید گذرواژه"
+
+#: .\templates\account\forget_password\password_reset_form.html:30
+msgid "The information entered is invalid."
+msgstr "اطلاعات وارد شده نامعتبر می‌باشد."
+
+#: .\templates\account\login\form_login.html:4
+#: .\templates\account\login\login.html:4
+msgid "Log in"
+msgstr "ورود"
+
+#: .\templates\account\login\form_login.html:9
+msgid "username"
+msgstr "نام کاربری"
+
+#: .\templates\account\login\form_login.html:18
+msgid "password"
+msgstr "گذرواژه"
+
+#: .\templates\account\login\form_login.html:19
+msgid "Reset"
+msgstr "بازیابی"
+
+#: .\templates\account\login\form_login.html:32
+msgid "The following information is invalid:"
+msgstr "اطلاعات زیر اشتباه است."
+
+#: .\templates\account\login\form_login.html:48
+msgid "still not registered?"
+msgstr "هنوز ثبت نام نکردید؟"
+
+#: .\templates\account\login\form_login.html:49
+#: .\templates\account\sign_up\sign_up.html:2
+msgid "Register"
+msgstr "ثبت نام"
+
+#: .\templates\account\sign_up\form_sign_up.html:4
+msgid "User profile form"
+msgstr "فرم ثبت نام کاربر"
+
+#: .\templates\account\sign_up\form_sign_up.html:36
+msgid "This email is used to recover your account."
+msgstr "از این ایمیل برای بازیابی گذرواژه استفاده می‌شود."
+
+#: .\templates\account\sign_up\form_sign_up.html:74
+msgid "Registration error:"
+msgstr "خطا در ثبت نام!"
+
+#: .\templates\account\sign_up\form_sign_up.html:78
+msgid "first name"
+msgstr "نام"
+
+#: .\templates\account\sign_up\form_sign_up.html:82
+msgid "(last name)"
+msgstr "نام ‌خانوادگی"
+
+#: .\templates\account\sign_up\form_sign_up.html:95
+msgid "Security code is incorrect."
+msgstr "کد امنیتی اشتباه است."
+
+#: .\templates\account\submit.html:4
+msgid "Send"
+msgstr "ارسال"
+
+#: .\views.py:15
+msgid "You are successfully Login."
+msgstr "شما با موفقیت وارد حساب کاربری شدید."
+
+#: .\views.py:24
+msgid "You are successfully logout."
+msgstr "شما با موفقیت از حساب کاربری خارج شدید."
+
+#: .\views.py:48
+msgid "Your registration was successful."
+msgstr "ثبت نام شما با موفقیت انجام شد."

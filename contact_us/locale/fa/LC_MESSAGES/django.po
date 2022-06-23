@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-19 19:26+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\apps.py:8 .\models.py:8
+msgid "ContactUs"
+msgstr "تماس با ما"
+
+#: .\models.py:12 .\templates\contact\form.html:13
+msgid "name"
+msgstr "نام"
+
+#: .\models.py:13 .\templates\contact\form.html:20
+msgid "email"
+msgstr "ایمیل"
+
+#: .\models.py:14 .\templates\contact\form.html:27
+msgid "subject"
+msgstr "موضوع"
+
+#: .\models.py:15
+msgid "massage"
+msgstr "پیام"
+
+#: .\models.py:16
+msgid "created date"
+msgstr "تاریخ ایجاد"
+
+#: .\models.py:17
+msgid "reviewed"
+msgstr "برسی شده"
+
+#: .\templates\contact\contact-us.html:2
+msgid "ContactUS"
+msgstr "تماس با ما"
+
+#: .\templates\contact\contact-us.html:8
+msgid "contact us"
+msgstr "تماس با ما"
+
+#: .\templates\contact\contact-us.html:9
+msgid "Use the form below to send any comments and criticisms."
+msgstr "برای ارسال هرگونه نظر و انتقادی از فرم زیر استفاده کنید."
+
+#: .\templates\contact\form.html:34
+msgid "messages"
+msgstr "پیام"
+
+#: .\templates\contact\form.html:47
+msgid "send"
+msgstr "ارسال"
+
+#: .\views.py:19
+msgid "Your message has been successfully sent."
+msgstr "پیام شما با موفقیت ارسال شد."

@@ -1,0 +1,22 @@
+<div class="trending-bar hidden-xs">{% load i18n %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="trending-title flout-bidi">{% trans 'HotNews' %}</h3>
+                <div id="trending-slide" class="owl-carousel owl-theme trending-slide">
+                    {% for hot_new in hot_news %}
+                        <div class="item item-top-hot-news">
+                            <div class="post-content">
+                                <h2 class="post-title title-small">
+                                    <a class="hot_news_title" href="{{ hot_new.get_absolute_url }}">
+                                        {{ hot_new.title }}
+                                    </a>
+                                </h2>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

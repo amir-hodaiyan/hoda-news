@@ -1,0 +1,33 @@
+{% load trans_page home_tag i18n %}
+<div id="top-bar" class="top-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="ts-date clearfix">
+                    {% current_date LANGUAGE_CODE %}
+                    <i class="fa fa-calendar-check-o"></i>
+                </div>
+                <ul class="un-styled top-nav">
+                    <li style="zoom: 1.1">
+                        {% if LANGUAGE_CODE == "en" %}
+                            <a href="{% trans_page request 'fa' %}"><i class="fa fa-language"></i></a>
+                        {% else %}
+                            <a href="{% trans_page request 'en' %}"><i class="fa fa-language"></i></a>
+                        {% endif %}
+                    </li>
+                    <li><a href="{% url 'Home:home' %}">{% trans 'home' %}</a></li>
+                    <li><a href="{% url 'ContactUs:contact_us' %}">{% trans 'contact us' %}</a></li>
+                    {% if not user.is_authenticated %}
+                        <li><a href="{% url 'Account:login' %}">{% trans 'login' %}</a></li>
+                    {% else %}
+                        <li><a href="{% url 'Account:change_password' %}">{% trans 'change password' %}</a></li>
+                        {% if user.is_staff %}
+                            <li><a href="{% url 'admin:index' %}">{% trans 'admin-panel' %}</a></li>
+                        {% endif %}
+                        <li><a href="{% url 'Account:logout' %}">{% trans 'exit' %}</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

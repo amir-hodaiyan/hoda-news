@@ -1,0 +1,27 @@
+<div id="featured-slider" class="owl-carousel owl-theme featured-slider">{% load static %}{% load home_tag %}
+    {% if sliders %}
+        {% for slider in sliders.all %}
+            <div class="item">
+                <img src="{{ slider.photo.url }}" alt="{{ slider.title }}">
+                <div class="featured-post">
+                    <div class="post-content">
+                        <h2 class="post-title title-extra-large post-title-slider">
+                            <a href="{{ slider.get_absolute_url }}">{{ slider.title }}</a>
+                        </h2>
+                        <span class="post-date bg-black-text"> {% jalali_date slider.updated LANGUAGE_CODE %}</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+<style>
+    {% if  LANGUAGE_CODE == 'en' %}
+        .item {
+            direction: ltr !important;
+        }
+        .featured-post, .post-content {
+            left: 0;
+        }
+    {% endif %}
+</style>

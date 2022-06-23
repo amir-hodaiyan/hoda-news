@@ -1,0 +1,51 @@
+<div class="col-md-5 col-xs-12 pad-l">{% load  static home_tag %}
+    <div class="row">
+        {% for image_post in image_post1 %}
+            <div class="col-sm-12">
+                <div class="post-overly-style contentTop hot-post-top clearfix">
+                    <div class="post-thumb">
+                        <img class="img-responsive" src="{{ image_post.photo.url }}" alt="{{ image_post.title }}">
+                    </div>
+                    <div class="post-content">
+                        <h2 class="post-title title-large post-title-slider">
+                            <a href="{{ image_post.get_absolute_url }}">{{ image_post.title }}</a>
+                        </h2>
+                        <span class="post-date bg-black-text"> {% jalali_date image_post.updated LANGUAGE_CODE %}</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %} <!-- large post -->
+        {% for image_post in image_post2 %}
+            <div class="col-sm-6 pad-r-small">
+                <div class="post-overly-style contentTop hot-post-bottom clearfix">
+                    <div class="post-thumb">
+                        <img class="img-responsive" src="{{ image_post.photo.url }}" alt="{{ image_post.title }}">
+                    </div>
+                    <div class="post-content">
+                        <h2 class="post-title title-medium post-title-slider">
+                            <a href="{{ image_post.get_absolute_url }}">{{ image_post.title }}</a>
+                        </h2>
+                        <span class="post-date bg-black-text"> {% jalali_date image_post.updated LANGUAGE_CODE %}</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %} <!-- Image post Right -->
+        {% for image_post in image_post3 %}
+            <div class="col-sm-6 pad-l-small">
+                <div class="post-overly-style contentTop hot-post-bottom clearfix">
+                    <div class="post-thumb">
+                        <img class="img-responsive" src="{{ image_post.photo.url }}" alt="{{ image_post.title }}">
+                    </div>
+                    <div class="post-content">
+                        <h2 class="post-title title-medium post-title-slider">
+                            <a href="{{ image_post.get_absolute_url }}">{{ image_post.title }}</a>
+                        </h2>
+                        <span class="post-date bg-black-text">
+                            {% jalali_date image_post.updated LANGUAGE_CODE %}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

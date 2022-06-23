@@ -1,0 +1,164 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-21 19:09+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\admin.py:7
+msgid "Become hot news"
+msgstr "تبدیل به خبرداغ"
+
+#: .\admin.py:10
+msgid "Selections become hot news"
+msgstr "موارد انتخابی به خبرداغ تبدیل شدند."
+
+#: .\admin.py:13
+msgid "Become normally news"
+msgstr "تبدیل به خبرعادی"
+
+#: .\admin.py:16
+msgid "Selected items become normal news"
+msgstr "موارد انتخابی به خبرعادی تبدیل شدند"
+
+#: .\admin.py:19
+msgid "Editor Selection"
+msgstr "انتخاب سردبیر"
+
+#: .\admin.py:22
+msgid "Marked items added to Editor Selection."
+msgstr "موارد انتخابی به انتخاب سردبیر تبدیل شدند"
+
+#: .\admin.py:25
+msgid "No editor selected"
+msgstr "عدم انتخاب سردبیر"
+
+#: .\admin.py:28
+msgid "Marked items removed from Editor Selection."
+msgstr "موارد انتخابی از انتخاب سردبیر حذف شدند"
+
+#: .\admin.py:31
+msgid "Publish selected items"
+msgstr "انتشار موارد انتخابی"
+
+#: .\admin.py:34
+msgid "Selections published."
+msgstr "موارد انتخابی منتشر شدند."
+
+#: .\admin.py:37
+msgid "Draft Selected Items"
+msgstr "پیش‌نویس موارد انتخابی"
+
+#: .\admin.py:40
+msgid "Selected items were drafted."
+msgstr "موارد انتخابی پیش‌نویس شدند."
+
+#: .\apps.py:9 .\models.py:38 .\templates\news_app\category_news.html:3
+msgid "News"
+msgstr "خبر"
+
+#: .\models.py:12 .\models.py:22
+msgid "Apply config"
+msgstr "اعمال تنظیمات"
+
+#: .\models.py:12
+msgid "Draft config"
+msgstr "پیش‌نویس تنظیمات"
+
+#: .\models.py:15
+msgid "Config news"
+msgstr "تنظیمات خبر"
+
+#: .\models.py:17
+msgid "Quantity most view"
+msgstr "تعداد پربازدیدترین خبرها"
+
+#: .\models.py:18
+msgid "Quantity category news"
+msgstr "تعداد خبرهای هر دسته"
+
+#: .\models.py:19
+msgid "Quantity hot news"
+msgstr "تعداد خبرهای داغ"
+
+#: .\models.py:20
+msgid "Quantity editor selection news"
+msgstr "تعداد خبرهای انتخاب سردبیر"
+
+#: .\models.py:33
+msgid "Is Apply config?"
+msgstr "آیا تنظیمات اعمال شود؟"
+
+#: .\models.py:42
+msgid "title"
+msgstr "عنوان"
+
+#: .\models.py:43
+msgid "slug"
+msgstr "شناسه یکتا"
+
+#: .\models.py:44
+msgid "body"
+msgstr "توضیحات"
+
+#: .\models.py:45
+msgid "image"
+msgstr "تصویر"
+
+#: .\models.py:47
+msgid "ip address"
+msgstr "نشانی آی‌پی"
+
+#: .\models.py:49 .\models.py:84
+msgid "category"
+msgstr "دسته‌‌بندی"
+
+#: .\models.py:52
+msgid "writer"
+msgstr "نویسنده"
+
+#: .\models.py:54
+msgid "status published"
+msgstr "وضعیت انتشار"
+
+#: .\models.py:55
+msgid "hot news"
+msgstr "خبرداغ"
+
+#: .\models.py:56
+msgid "editor selection"
+msgstr "انتخاب سردبیر"
+
+#: .\models.py:57
+msgid "updated date"
+msgstr "تاریخ بروزرسانی"
+
+#: .\models.py:58
+msgid "created date"
+msgstr "تاریخ ایجاد"
+
+#: .\models.py:83
+msgid "update date"
+msgstr "تاریخ بروزرسانی"
+
+#: .\models.py:85
+msgid "thumbnail"
+msgstr "تصویر بندانگشتی"
+
+#: .\models.py:86
+msgid "number of visited"
+msgstr "تعداد بازدید"
+
+#: .\templates\news_app\detail_news.html:47
+msgid "scoring"
+msgstr "امتیازدهی"
+
+#: .\views.py:43
+msgid "Your message has been successfully sent."
+msgstr "پیام شما با موفقیت ارسال شد."

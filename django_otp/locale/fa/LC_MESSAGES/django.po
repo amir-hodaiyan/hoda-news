@@ -1,0 +1,185 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-18 19:26+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\forms.py:59
+msgid "Token is required"
+msgstr "توکن ضروری است"
+
+#: .\forms.py:60
+msgid "Error generating challenge: {0}"
+msgstr ""
+
+#: .\forms.py:61
+msgid "The selected encryption device is not interactive"
+msgstr "دستگاه رمزگذاری انتخاب شده تعاملی نیست"
+
+#: .\forms.py:62
+msgid "OTP Challenge: {0}"
+msgstr ""
+
+#: .\forms.py:63
+msgid "The token entered is invalid."
+msgstr "توکن وارد شده نامعتبر"
+
+#: .\forms.py:65
+#, python-format
+msgid "Attempting to enter one-time code is excessive %(failure_count)% "
+msgid_plural ""
+"Attempting to enter one-time code is excessive %(failure_count)% "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\forms.py:67
+msgid "Verification of the token is currently disabled"
+msgstr "اعتبار سنجی توکن در حال حاضر غیر فعال است"
+
+#: .\models.py:75
+msgid "user"
+msgstr "کاربر"
+
+#: .\models.py:76
+msgid "name"
+msgstr "نام"
+
+#: .\models.py:77
+msgid "confirmed"
+msgstr "تایید شده"
+
+#: .\models.py:82
+msgid "Devices"
+msgstr "دستگاه ها"
+
+#: .\models.py:83
+msgid "Device"
+msgstr "دستگاه"
+
+#: .\models.py:91 .\plugins\otp_totp\models.py:25
+msgid "OTP Device"
+msgstr "دستگاه رمزساز"
+
+#: .\models.py:216
+msgid "token"
+msgstr "توکن"
+
+#: .\models.py:218
+msgid "The timestamp of the moment of expiry of the saved token."
+msgstr "زمان آخرین تلاش ناموفق"
+
+#: .\models.py:287
+msgid "Last failed attempt"
+msgstr "آخرین تلاش ناموفق"
+
+#: .\models.py:288
+msgid "Number of attempts"
+msgstr "تعداد تلاش های ناموفق"
+
+#: .\plugins\otp_totp\admin.py:38
+msgid "Identity"
+msgstr "هویت"
+
+#: .\plugins\otp_totp\admin.py:41
+msgid "Configuration"
+msgstr "پیکربندی"
+
+#: .\plugins\otp_totp\admin.py:44
+msgid "Failed login"
+msgstr "ورود ناموفق"
+
+#: .\plugins\otp_totp\admin.py:66
+msgid "Visit"
+msgstr "مشاهده"
+
+#: .\plugins\otp_totp\admin.py:73
+msgid "Qrcode"
+msgstr "بارکد"
+
+#: .\plugins\otp_totp\apps.py:8
+msgid "OTP"
+msgstr "کلید یکبار مصرف"
+
+#: .\plugins\otp_totp\models.py:73
+msgid "key"
+msgstr "کلید"
+
+#: .\plugins\otp_totp\models.py:74
+msgid "40-letter secret key based on hex"
+msgstr "کلید محرمانه 40 حرفی بر اساس هگز"
+
+#: .\plugins\otp_totp\models.py:75
+msgid "Validity time"
+msgstr "زمان اعتبار هر کد"
+
+#: .\plugins\otp_totp\models.py:76 .\plugins\otp_totp\models.py:80
+msgid "Per second"
+msgstr "بر حسب ثانیه"
+
+#: .\plugins\otp_totp\models.py:77
+msgid "Start time origin"
+msgstr "زمان مبدا شروع"
+
+#: .\plugins\otp_totp\models.py:77
+msgid "In terms of Unix time."
+msgstr "بر حسب یونیکس"
+
+#: .\plugins\otp_totp\models.py:78
+msgid "Number of digits"
+msgstr "تعداد ارقام"
+
+#: .\plugins\otp_totp\models.py:79
+msgid "Number of authorized use"
+msgstr "تعداد دفعات مجاز به استفاده"
+
+#: .\plugins\otp_totp\models.py:80
+msgid "Permitted delay"
+msgstr "تاخیر مجاز"
+
+#: .\plugins\otp_totp\models.py:82
+msgid ""
+"The value of the latest verified token.The next token must be at a higher "
+"time step."
+msgstr ""
+
+#: .\templates\otp\admin111\login.html:37
+msgid "Please correct the error below."
+msgstr "لطفا خطاهای زیر را تصحیح کنید."
+
+#: .\templates\otp\admin111\login.html:38
+msgid "Please correct the errors below."
+msgstr "لطفا خطاهای زیر را تصحیح کنید."
+
+#: .\templates\otp\admin111\login.html:53
+#, python-format
+msgid ""
+"You as <span style = \"text-decoration: underline; color: black\"> %"
+"(username)s </span> Login. But you are not allowed to view the above page. "
+"Do you want to log in with another user?"
+msgstr ""
+"شما به عنوان <span style = \"text-decoration: underline; color: black\"> %"
+"(username)s </span> واردشده اید. اما شما مجاز به مشاهده صفحه بالا نیستید.آیا "
+"می خواهید با کاربر دیگری وارد شوید؟"
+
+#: .\templates\otp\admin111\login.html:73
+msgid "otp device"
+msgstr "دستگاه رمز ساز"
+
+#: .\templates\otp\admin111\login.html:78
+msgid "otp code"
+msgstr "کد یکبار مصرف"
+
+#: .\templates\otp\admin111\login.html:83
+msgid "Forgotten your password or username?"
+msgstr "نام کاربری یا گذرواژه خود را فراموش کردید؟"
+
+#: .\templates\otp\admin111\login.html:87
+msgid "Log in"
+msgstr "ورود"

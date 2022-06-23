@@ -1,0 +1,50 @@
+{% load i18n %}{% load widget_tweaks %}
+<form id="contact-us-form" method="post">{% csrf_token %}
+    <div class="row">
+        {% if form.non_field_errors %}
+            <div class="non-field-errors lang_bidi">
+                {% for err in form.non_field_errors %}
+                    <p class="form-error">{{ err }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="name">{% trans 'name' %}</label>
+                {{ form.name|add_class:'form-control' }}
+                <span class="error-form">{{ form.name.errors }}</span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="email">{% trans 'email' %}</label>
+                {{ form.email|add_class:'form-control' }}
+                <span class="error-form">{{ form.email.errors }}</span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="subject">{% trans 'subject' %}</label>
+                {{ form.subject|add_class:'form-control' }}
+                <span class="error-form">{{ form.subject.errors }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="message">{% trans 'messages' %}</label>
+        {{ form.massage|add_class:'form-control' }}
+        <span class="error-form">{{ form.massage.errors }}</span>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4 flout-bidi">
+            <div class="captcha-box1">
+                {{ form.captcha |add_class:'form-control required-field' }}
+                <span class="error-form">{{ form.captcha.errors }}</span>
+            </div>
+        </div>
+        <div class="col-md-8 flout-bidi">
+            <input type="submit" class="btn btn-primary not-flout-bidi" value="{% trans 'send' %}"/>
+        </div>
+    </div>
+</form>

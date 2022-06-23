@@ -1,0 +1,136 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-20 09:53+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\admin.py:7
+msgid "Publish selected items"
+msgstr "انتشار موارد انتخابی"
+
+#: .\admin.py:10
+msgid "Selected items were Published."
+msgstr "موارد انتخابی منتشر شدند."
+
+#: .\admin.py:13
+msgid "draft selected items"
+msgstr "پیش‌نویس موارد انتخابی"
+
+#: .\admin.py:16
+msgid "Selected items were drafted."
+msgstr "موارد انتخابی پیش‌نویس شدند."
+
+#: .\admin.py:47
+msgid "Main"
+msgstr "اصلی"
+
+#: .\admin.py:48
+msgid "Home page"
+msgstr "صفحه خانه"
+
+#: .\apps.py:8 .\models.py:40
+msgid "photo news"
+msgstr "خبرهای تصویری"
+
+#: .\models.py:12
+msgid "Photo"
+msgstr "تصویر"
+
+#: .\models.py:13
+msgid "Photos"
+msgstr "تصاویر"
+
+#: .\models.py:16 .\models.py:44
+msgid "title"
+msgstr "عنوان"
+
+#: .\models.py:17
+msgid "image"
+msgstr "تصویر"
+
+#: .\models.py:18 .\models.py:50
+msgid "status publish"
+msgstr "وضعیت انتشار"
+
+#: .\models.py:19 .\models.py:51 .\models.py:52 .\models.py:82
+msgid "created date"
+msgstr "تاریخ ایجاد"
+
+#: .\models.py:28 .\models.py:80
+msgid "thumbnail"
+msgstr "تصویر بندانگشتی"
+
+#: .\models.py:33
+msgid "-"
+msgstr "-"
+
+#: .\models.py:34
+msgid "important image1"
+msgstr "ویژه1"
+
+#: .\models.py:35
+msgid "important image2"
+msgstr "ویژه2"
+
+#: .\models.py:36
+msgid "important image3"
+msgstr "ویژه3"
+
+#: .\models.py:45
+msgid "slug"
+msgstr "شناسه"
+
+#: .\models.py:46
+msgid "body"
+msgstr "توضیحات"
+
+#: .\models.py:47
+msgid "main photo"
+msgstr "تصاویر اصلی"
+
+#: .\models.py:48
+msgid "more photo"
+msgstr "تصویر بیشتر"
+
+#: .\models.py:49
+msgid "important-photo"
+msgstr "تصویر ویژه"
+
+#: .\models.py:55 .\models.py:83
+msgid "photographer"
+msgstr "عکاس"
+
+#: .\models.py:57
+msgid "Home slider"
+msgstr "اسلایدر در خانه"
+
+#: .\models.py:58
+msgid "Important home photo"
+msgstr "تصویر ویژه در خانه"
+
+#: .\models.py:59
+msgid "insert in slider of home page."
+msgstr "قرارگیری در اسلایدر صفحه‌ی خانه."
+
+#: .\models.py:81
+msgid "updated date"
+msgstr "تاریخ بروزرسانی"
+
+#: .\templates\photo\photo_category.html:3
+msgid "Photo news"
+msgstr "تصاویر خبری"
+
+#: .\templates\photo\photo_category.html:9
+msgid "Most important"
+msgstr "مهمترین ها"
+
+#: .\templates\photo\photo_category.html:41
+msgid "Latest news images"
+msgstr "آخرین خبرهای تصویری"

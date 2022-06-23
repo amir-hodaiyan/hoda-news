@@ -1,0 +1,89 @@
+{% extends 'base/base.html' %}{% load home_tag  i18n static %}{% block title %}{{ details_video.title_video }}{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'video/style/detail_video.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" style="max-width: 100% !important; flex-grow: 1 !important;">
+                <div class="row col-md-12">
+                    <div style="width: 100%">
+                        <article id="item" class="box item full-img">
+                            <div style="display: none;">
+                                <div class="logo">
+                                    <img src="{{ details_video.poster_video.url }}" alt="{{ details_video.title_video }}">
+                                </div>
+                            </div>
+                            <div class="item-header">
+                                <div class="item-nav row">
+
+                                    <div class="col-md-2 col-sm-2 item-date">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="jpublish">{{ number_of_visit }} <span>{% trans "visit" %}</span></span>
+                                    </div>
+                                    <div class="item-title item-date  col-md-7 col-sm-8">
+                                        <h1 class="title">{{ details_video.title_video }}</h1>
+                                    </div>
+                                    <div class="col-md-3 col-sm-2 item-date">
+                                        <i class="fa fa-clock-o jpublish"></i>
+                                        <span class="jpublish">{% jalali_date details_video.updated LANGUAGE_CODE %}</span>
+                                    </div>
+                                </div>
+                                <div class="item-summary">
+                                    <span class="category_videos">{{ details_video.category_str }}</span>
+                                    <div class="itemPlayer0">
+                                        <video id="vidPlayer0" width="100%" controls="controls" poster="{{ details_video.poster_video.url }}">
+                                            <source src="{{ details_video.video.url }}" type="video/mp4">
+                                        </video>
+                                        <div class="description_video flout-bidi">
+                                            <p>{{ details_video.description_video }}</p>
+                                            <a href="{{ details_video.video.url }}"
+                                               target="_blank" class="btn video-download flout-bidi ">
+                                                <i class="fa fa-download text-success"></i>
+                                                <span class="text-info">{% trans 'receive' %}: </span>
+                                                <span class="text-info">{{ size }}</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            {% if most_visit_video %}
+                <div class="col-md-4">
+                    <section
+                            class="box list list-bordered list-thumbs thumbs-md highlights hidden-summary header-bg-primary">
+                        <header>
+                            <h2 class="video-hot-title"><span>{% trans 'Most viewed video' %}</span></h2>
+                        </header>
+                        <div>
+                            <ul>
+                                {% for most_view in most_visit_video %}
+                                    <li class="video hot">
+                                        <figure>
+                                            <a target="_blank" href="{{ most_view.get_absolute_url }}">
+                                                <img src="{{ most_view.poster_video.url }}" alt="{{ most_view.title_video }}">
+                                            </a>
+                                        </figure>
+                                        <div class="desc">
+                                            <h3 style="padding-top: 25px">
+                                                <a href="{{ most_view.get_absolute_url }}" target="_blank">{{ most_view.title_video }}</a>
+                                            </h3>
+                                            <div class="item-date">
+                                                <i class="fa fa-clock-o jpublish"></i>
+                                                <span class="jpublish">{% jalali_date details_video.updated LANGUAGE_CODE %}</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% include 'include/footer.html' %}
+{% endblock %}

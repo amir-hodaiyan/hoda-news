@@ -1,0 +1,107 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-16 16:10+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\admin.py:21
+msgid "Score"
+msgstr "امتیاز"
+
+#: .\admin.py:39
+msgid "Rating average"
+msgstr "میانگین امتیازات"
+
+#: .\apps.py:9 .\models.py:126
+msgid "ratings"
+msgstr "امتیازدهی"
+
+#: .\models.py:23
+msgid ""
+"User is mandatory. Enable 'STAR_RATINGS_ANONYMOUS' for anonymous ratings."
+msgstr ""
+"کاربر اجباری است برای رتبه‌بندی‌های ناشناس، «STAR_RATINGS_ANONYMOUS» را فعال "
+"کنید."
+
+#: .\models.py:59
+msgid "Already rated."
+msgstr "قبلا امتیاز دادید"
+
+#: .\models.py:82
+msgid "count"
+msgstr "تعداد"
+
+#: .\models.py:83
+msgid "total"
+msgstr "کل"
+
+#: .\models.py:84
+msgid "average"
+msgstr "میانگین"
+
+#: .\models.py:87
+msgid "content type"
+msgstr "نوع محتوی"
+
+#: .\models.py:88
+msgid "id"
+msgstr "شناسه"
+
+#: .\models.py:127
+msgid "rating"
+msgstr "امتیازدهی"
+
+#: .\models.py:156
+msgid "User rating"
+msgstr "امتیاز کاربر"
+
+#: .\models.py:161
+msgid "user"
+msgstr "کاربر"
+
+#: .\models.py:162
+msgid "ip"
+msgstr "آی‌پی"
+
+#: .\models.py:163 .\models.py:171
+msgid "score"
+msgstr "امتیاز"
+
+#: .\models.py:164
+msgid "content"
+msgstr "محتوی"
+
+#: .\models.py:170
+msgid "for"
+msgstr "را برای"
+
+#: .\models.py:172
+msgid "."
+msgstr "داد."
+
+#: .\templates\star_ratings\widget_base.html:42
+msgid "Login to rate"
+msgstr "برای امتازدهی وارد شوید"
+
+#: .\templates\star_ratings\widget_base.html:70
+msgid "Average Scores: "
+msgstr "میانگین امتیازات"
+
+#: .\templates\star_ratings\widget_base.html:77
+msgid "Number of participants: "
+msgstr "تعداد شرکت کنندگان"
+
+#: .\templates\star_ratings\widget_base.html:93
+msgid "Clear"
+msgstr "پاکسازی"
+
+#: .\templates\star_ratings\widget_base.html:103
+msgid "Log in to view details and score points."
+msgstr "برای مشاهده جزئیات و امتیازدهی وارد شوید."

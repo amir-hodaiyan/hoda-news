@@ -1,0 +1,152 @@
+{% extends 'base/base.html' %}{% load i18n  static  home_tag %}
+{% block title %}{% trans "Video news" %}{% endblock %}
+{% block style %}<link rel="stylesheet" href="{% static 'video/style/category_video.css' %}">{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    {% if top_video %}
+                        {% for top in top_video %}
+                            <div class="col-12 col-lg-7">
+                                <section id="box522" class="box top no-header _play">
+                                    <div>
+                                        <ul>
+                                            <li class="video">
+                                                <figure>
+                                                    <a target="_blank" href="{{ top.get_absolute_url }}" title="{{ top.title_video }}">
+                                                        <img class="zoom-in" src="{{ top.poster_video.url }}" alt="{{ top.title_video }}">
+                                                    </a>
+                                                </figure>
+                                                <div class="desc">
+                                                    <h3><a href="{{ top.get_absolute_url }}" target="_blank">{{ top.title_video }}</a></h3>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if top_left_video %}
+                        <div class="col-12 col-lg-5">
+                            <section id="box85" class="box cols cols-2 snip hidden-summary no-header _play"
+                                     data-conf="{&quot;id&quot;:85}">
+                                <div>
+                                    <ul>
+                                        {% for tl_video in top_left_video %}
+                                            <li class="video">
+                                                <figure>
+                                                    <a target="_blank" href="{{ tl_video.get_absolute_url }}" title="{{ tl_video.title_video }}">
+                                                        <img src="{{ tl_video.poster_video.url }}" alt="Poster video">
+                                                    </a>
+                                                </figure>
+                                                <div class="desc">
+                                                    <h3>
+                                                        <a href="{{ tl_video.get_absolute_url }}" target="_blank">{{ tl_video.title_video }}</a>
+                                                    </h3>
+                                                    <time class="publish_video">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span> {% jalali_date tl_video.updated LANGUAGE_CODE %}</span>
+                                                    </time>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="row">
+                    {% if more_videos %}
+                        <div class="col-12 col-lg-7">
+                            <section id="box431"
+                                     class="box snip cols cols-3 no-header _play hidden-summary has-more has-more-bottom has-more-default has-more-block"
+                                     data-conf="{&quot;id&quot;:431}">
+                                <div>
+                                    <ul>
+                                        {% for more_video in more_videos %}
+                                            <li class="video">
+                                                <figure>
+                                                    <a target="_blank"
+                                                       href="{{ more_video.get_absolute_url }}"
+                                                       title="{{ more_video.title_video }}">{{ more_video.title_video }}
+                                                        <img src="{{ more_video.poster_video.url }}" alt="Post video">
+                                                    </a>
+                                                </figure>
+                                                <div class="desc">
+                                                    <h3>
+                                                        <a href="{{ more_video.get_absolute_url }}" target="_blank">
+                                                            {{ more_video.title_video }}
+                                                        </a>
+                                                    </h3>
+                                                    <p>{{ more_video.description_video }}</p>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                {% if more_videos.has_next or more_videos.has_previous %}
+                                    <div class="paging" style="background-color: rebeccapurple">
+                                        <ul class="pagination" style="float: right ;margin-right: 48%">
+                                            {% if more_videos.has_previous %}
+                                                <li class="next_video">
+                                                    <a href="{{ request.path }}?p={{ more_videos.previous_page_number }}">
+                                                        {{ more_videos.previous_page_number }}
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                            <li class="active current_page"><span>{{ more_videos.number }}</span></li>
+                                            {% if more_videos.has_next %}
+                                                <li class="before_video">
+                                                    <a href="{{ request.path }}?p={{ more_videos.next_page_number }}">
+                                                        {{ more_videos.next_page_number }}
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                {% endif %}
+                            </section>
+                        </div>
+                    {% endif %}
+                    {% if most_visit_video %}
+                        <div class="col-12 col-lg-5">
+                            <section id="box432"
+                                     class="box list list-bordered list-thumbs thumbs-md highlights hidden-summary header-bg-primary">
+                                <header>
+                                    <h2 class="video-hot-title"><span>{% trans 'Most viewed video' %}</span></h2>
+                                </header>
+                                <div>
+                                    <ul>
+                                        {% for most_visit in most_visit_video %}
+                                            <li class="video hot">
+                                                <figure>
+                                                    <a target="_blank" href="{{ most_visit.get_absolute_url }}">
+                                                        <img src="{{ most_visit.poster_video.url }}" alt="{{ most_visit.title_video }}">
+                                                    </a>
+                                                </figure>
+                                                <div class="desc">
+                                                    <h3 style="padding-top: 25px">
+                                                        <a href="{{ most_visit.get_absolute_url }}" target="_blank">{{ most_visit.title_video }}</a>
+                                                    </h3>
+                                                    <time class="publish_video">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span> {% jalali_date most_visit.updated LANGUAGE_CODE %}</span>
+                                                    </time>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'include/footer.html' %}
+{% endblock %}

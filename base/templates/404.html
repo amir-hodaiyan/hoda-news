@@ -1,0 +1,7 @@
+{% extends 'error_pages.html' %}{% load i18n %}
+{% block title %}{% trans 'Page not found.(404)' %} {% endblock %}
+{% block error_text %}
+    <p style="text-shadow: 2px 1px black">{% trans 'Sorry, the page you requested does not exist.' %}</p>
+{% endblock %}
+{% block error_code1 %}404{% endblock %}
+{% block error_code2 %}404{% endblock %}

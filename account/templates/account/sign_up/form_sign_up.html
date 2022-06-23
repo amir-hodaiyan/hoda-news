@@ -1,0 +1,101 @@
+{% load i18n static  widget_tweaks %}
+<form class="login100-form validate-form" method="post">{% csrf_token %}
+    {% block heder-login-form %}
+        <span class="login100-form-title p-b-23">{% trans "User profile form" %}</span>
+    {% endblock %}
+    <div class="row m-b-25">
+        <div class="col-md-6">
+            <div class="p-b-9">
+                <span class="txt1">{{ form.first_name.label_tag }}</span>
+            </div>
+            <div class="wrap-input100">
+                {{ form.first_name|add_class:'input100' }}
+                <span class="focus-input100"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class=" p-b-9">
+                <span class="txt1">{{ form.last_name.label_tag }}</span>
+            </div>
+            <div class="wrap-input100">
+                {{ form.last_name|add_class:'input100' }}
+                <span class="focus-input100"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row m-b-25">
+        <div class="col-md-6">
+            <div class="p-b-9">
+                <span class="txt1">{{ form.email.label_tag }}</span>
+            </div>
+            <div class="wrap-input100">
+                {{ form.email|add_class:'input100' }}
+                <span class="focus-input100"></span>
+            </div>
+            <small class="email-help">
+                {% trans 'This email is used to recover your account.' %}
+            </small>
+        </div>
+        <div class="col-md-6">
+            <div class="p-b-9">
+                <span class="txt1">{{ form.username.label_tag }}</span>
+            </div>
+            <div class="wrap-input100">
+                {{ form.username|add_class:'input100' }}
+                <span class="focus-input100"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="p-b-9">
+                <span class="txt1">{{ form.password1.label_tag }}</span>
+            </div>
+            <div class="wrap-input100">
+                {{ form.password1|add_class:'input100' }}
+                <span class="focus-input100"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-b-9">
+                <span class="txt1">{{ form.password2.label_tag }}</span>
+            </div>
+            <div class="wrap-input100">
+                {{ form.password2|add_class:'input100' }}
+                <span class="focus-input100"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row captcha-box">
+        {{ form.captcha|add_class:'input100' }}
+    </div>
+    {% if form.errors %}
+        <div style="margin: 0 10px">
+            <h4 class="alert-heading">{% trans 'Registration error:' %}</h4>
+            <ul style="margin:0 30px">
+                {% if form.first_name.errors %}
+                    <li class="li_error_register">{{ form.first_name.errors }}
+                        <span class="m-r-111 top-0 abs">{% trans 'first name' %}</span>
+                    </li>
+                {% elif form.last_name.errors %}
+                    <li class="li_error_register">{{ form.last_name.errors }}
+                        <span class="m-r-111 top-0 abs"> {% trans '(last name)' %}</span>
+                    </li>
+                {% elif form.email.errors %}
+                    <li class="li_error_register">{{ form.email.errors }}</li>
+                {% elif form.username.errors %}
+                    <li class="li_error_register">{{ form.username.errors }}</li>
+
+                {% elif form.password1.errors %}
+                    <li class="li_error_register">{{ form.password1.errors }}</li>
+
+                {% elif form.password2.errors %}
+                    <li class="li_error_register">{{ form.password2.errors }}</li>
+                {% elif form.captcha.errors %}
+                    <li class="li_error_register">{% trans 'Security code is incorrect.' %}</li>
+                {% endif %}
+            </ul>
+        </div>
+    {% endif %}
+    {% include 'account/submit.html' %}
+</form>

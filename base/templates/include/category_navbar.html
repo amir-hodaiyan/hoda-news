@@ -1,0 +1,55 @@
+<nav class="site-navigation navigation flout-bidi">{% load i18n %}
+    <div class="site-nav-inner">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">{% trans 'Change navigation status' %}</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav pad-r-0">
+                {% for category in categories %}
+                    {% if not category.parent %}
+                        {% if not category.have_children %}
+                            <li>
+                                <a class="single-link" href="{% url 'Home:category' category.slug %}">
+                                    {{ category.title }}
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="dropdown">
+                                <p class="category fw-700" data-toggle="dropdown">
+                                    {{ category.title }}
+                                    <i class="fa fa-angle-down"></i>
+                                </p>
+                                <ul class="dropdown-menu" role="menu" style="text-align: initial">
+                                    {% for child in category.children.all %}
+                                        {% if category.slug == 'video-service' %}
+                                            <li>
+                                                <a class="category" href="{% url 'Home:video' child.slug %}">
+                                                    {{ child.title }}
+                                                </a>
+                                            </li>
+                                        {% elif category.slug == 'photo-service' %}
+                                            <li>
+                                                <a class="category" href="{% url 'Home:photo' child.slug %}">
+                                                    {{ child.title }}
+                                                </a>
+                                            </li>
+                                        {% else %}
+                                            <li>
+                                                <a class="category" href="{% url 'Home:category' child.slug %}">
+                                                    {{ child.title }}
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>

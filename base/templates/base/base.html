@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang={% if LANGUAGE_CODE == 'fa' %}"fa-ir">{% else %}"en-us">{% endif %}
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="icon" href="{% static 'base/images/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/colorbox.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+    <style>
+        {% if LANGUAGE_CODE == 'fa' %}
+            .captcha {
+                left: 4px;
+                right: unset;
+            }
+            body, .lang_bidi {
+                direction: rtl;
+                text-align: right;
+            }
+            .owl-nav {
+                left: 0;
+            }
+            .flout-bidi {
+                float: right !important;
+            }
+            .item-top-hot-news {
+                float: right !important;
+                text-align: right !important;
+                direction: rtl !important;
+            }
+            .not-flout-bidi {
+                float: left !important;
+            }
+        {% else %}
+            body, .lang_bidi {
+                direction: ltr !important;
+                text-align: left !important;
+            }
+            .owl-nav {
+                right: 0;
+            }
+            .flout-bidi {
+                float: left !important;;
+            }
+            .not-flout-bidi {
+                float: right !important;;
+            }
+            .item-top-hot-news {
+                float: left !important;;
+                margin-left: 90px;
+                text-align: left !important;;
+                direction: ltr !important;;
+            }
+        {% endif %}
+    </style>
+    {% block style %}{% endblock %}
+</head>
+<body>
+{% if hot_news %}{% include 'include/hot_news.html' %}{% endif %}
+{% include 'include/top_navbar.html' %}
+{% include 'include/header.html' %}
+{% if messages %}
+    <div class="container">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                <button type="button" class="close not-flout-bidi" data-dismiss="alert">x</button>
+                <h4>{{ message }}</h4>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+<div class="main-nav clearfix">
+    <div class="container">
+        <div class="row">
+            {% if categories %}{% include 'include/category_navbar.html' %}{% endif %}
+        </div>
+    </div>
+</div>
+{% block body %}{% endblock %}
+<script type="text/javascript" src="{% static 'base/js/jquery.js' %}"></script>  <!-- initialize jQuery Library -->
+<script type="text/javascript" src="{% static 'base/js/bootstrap.min.js' %}"></script>  <!-- Bootstrap jQuery -->
+<script type="text/javascript" src="{% static 'base/js/owl.carousel.min.js' %}"></script>  <!-- Owl Carousel -->
+<script type="text/javascript" src="{% static 'base/js/jquery.counterup.min.js' %}"></script>  <!-- Counter -->
+<script type="text/javascript" src="{% static 'base/js/waypoints.min.js' %}"></script>  <!-- Waypoints -->
+<script type="text/javascript" src="{% static 'base/js/jquery.colorbox.js' %}"></script>  <!-- Color box -->
+<script type="text/javascript" src="{% static 'base/js/custom.js' %}"></script>  <!-- Template custom -->
+</body>
+</html>

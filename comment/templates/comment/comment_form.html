@@ -1,0 +1,43 @@
+{% load i18n widget_tweaks %}
+<form method="post" id="form_comment" action="">{% csrf_token %}
+    {% if form.non_field_errors %}
+        <div class="non-field-errors lang_bidi">
+            {% for err in form.non_field_errors %}
+                <p class="form-error">{{ err }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <div class="row lang_bidi">
+        <div class="col-md-12">
+            <div class="form-group lang_bidi">
+                <span>{{ form.comment.label }}:</span>
+                {{ form.comment |add_class:'form-control required-field ' }}
+                <span class="error-form">{{ form.comment.errors }}</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group lang_bidi">
+                <span>{{ form.full_name.label }}:</span>
+                {{ form.full_name |add_class:'form-control required-field ' }}
+                <span class="error-form">{{ form.full_name.errors }}</span>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="form-group lang_bidi">
+                <span>{{ form.email.label }}:</span>
+                {{ form.email |add_class:'form-control required-field ' }}
+                <span class="error-form">{{ form.email.errors }}</span>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="captcha-box1">
+                {{ form.captcha |add_class:'form-control required-field ' }}
+                <span class="error-form">{{ form.captcha.errors }}</span>
+            </div>
+        </div>
+        <div class="col-md-12 ">
+            <input class="comments-btn btn btn-primary not-flout-bidi" type="submit" value="{% trans 'send' %}">
+        </div>
+    </div>
+</form>

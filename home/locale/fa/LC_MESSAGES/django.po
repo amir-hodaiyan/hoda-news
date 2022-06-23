@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-19 19:23+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\apps.py:8
+msgid "Home"
+msgstr "خانه"
+
+#: .\templates\home\index.html:2
+msgid "Hadanews News Agency"
+msgstr "خبرگزاری هدانیوز"
+
+#: .\templates\home\index.html:10
+msgid "News images"
+msgstr "تصاویر خبری"

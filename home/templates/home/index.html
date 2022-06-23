@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}{% load i18n %}
+{% block title %}{% trans 'Hadanews News Agency' %}{% endblock %}
+{% block body %}
+    {% if sliders or image_post1 or image_post2 or image_post3 %}
+        <div class="gap-40"></div>
+        <section class="featured-post-area no-padding">
+            <div class="container">
+                <div class="row">
+                    <a class="title-category " href="{% url 'Home:photo' %}">
+                        <h3 class="red_light_title"><span>{% trans 'News images' %}</span></h3>
+                    </a>
+                    <div class="col-md-7 col-xs-12 pad-r">
+                        {% include 'include/slider_news.html' %}
+                    </div>
+                    {% include 'include/image_post.html' %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    {% include 'include/news.html' %}
+    {% include 'include/footer.html' %}
+{% endblock %}

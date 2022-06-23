@@ -1,0 +1,94 @@
+{% extends 'base/base.html' %}
+{% load home_tag  i18n %}
+{% block title %}{% trans 'Photo news' %}{% endblock %}
+{% block body %}
+    <div class="gap-20"></div>
+    <section class="featured-post-area no-padding">
+        <div class="container">
+            {% if sliders %}
+                <h3 class="block-title color-aqua no-select"><span>{% trans 'Most important' %}</span></h3>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 ">
+                        <div id="featured-slider" class="owl-carousel owl-theme featured-slider" style="height: 450px;">
+                            {% for slider in sliders.all %}
+                                <div class="item">
+                                    <img src="{{ slider.photo.url }} " style="width: 100%; height: 450px"
+                                         alt="{{ slider.title }}">
+                                    <div class="featured-post lang_bidi"
+                                         style="width: 100%;background: #f0f8ff42;}">
+                                        <div class="post-content">
+                                            <h2 class="post-title title-extra-large post-title-slider"
+                                                style="width: max-content">
+                                                <a href="{{ slider.get_absolute_url }}">{{ slider.title }}</a>
+                                            </h2>
+                                            <span class="post-date">
+                                                <i class="fa fa-clock-o"></i>
+                                                {% jalali_date slider.updated LANGUAGE_CODE %}
+                                            </span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="gap-40"></div>
+            {% if last_photo %}
+                <div class="row">
+                    <div class="last_news">
+                        <h3 class="red_light_title"><span>{% trans 'Latest news images' %}</span></h3>
+                        {% for ls_photo in last_photo %}
+                            <div class="col-sm-6 col-md-4 col-lg3">
+                                <div class="post-overly-style contentTop hot-post-top clearfix post-box">
+                                    <div class="post-thumb">
+                                        <img class="img-responsive" src="{{ ls_photo.photo.url }}"
+                                             alt="{{ ls_photo.title }}">
+                                    </div>
+                                    <div class="post-content post-content-photo lang_bidi" style="right: unset">
+                                        <h2 class="post-title title-medium">
+                                            <a href="{{ ls_photo.get_absolute_url }}">{{ ls_photo.title }}</a>
+                                        </h2>
+                                        <span class="post-date post-date-photo">
+                                            <i class="fa fa-clock-o"></i>
+                                             {% jalali_date ls_photo.updated LANGUAGE_CODE %}
+                                        </span>
+                                        <span class="post-writer post-photographer-photo">
+                                            <i class="fa fa-pencil"></i>
+                                            {{ ls_photo.photographer }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="gap-40"></div>
+                    {% if last_photo.has_next or last_photo.has_previous %}
+                        <div class="paging" style="background-color: rebeccapurple">
+                            <ul class="pagination" style="float: right ;margin-right: 48%">
+                                {% if last_photo.has_previous %}
+                                    <li class="next_video">
+                                        <a href="{{ request.path }}?p={{ last_photo.previous_page_number }}">
+                                            {{ last_photo.previous_page_number }}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                <li class="active current_page"><span>{{ last_photo.number }}</span></li>
+                                {% if last_photo.has_next %}
+                                    <li class="before_video">
+                                        <a href="{{ request.path }}?p={{ last_photo.next_page_number }}">
+                                            {{ last_photo.next_page_number }}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                    <div class="gap-40"></div>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+    {% include 'include/footer.html' %}
+{% endblock %}

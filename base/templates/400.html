@@ -1,0 +1,7 @@
+{% extends 'error_pages.html' %}{% load i18n %}
+{% block title %}{% trans 'Bad Request.(400)' %}{% endblock %}
+{% block error_text %}
+    <p style="text-shadow: 2px 1px black">{% trans 'Bad Request!' %}</p>
+{% endblock %}
+{% block error_code1 %}400{% endblock %}
+{% block error_code2 %}400{% endblock %}

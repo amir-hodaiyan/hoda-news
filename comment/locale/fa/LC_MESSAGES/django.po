@@ -1,0 +1,104 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-20 10:35+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\admin.py:7
+msgid "Convert to read comments"
+msgstr "تبدیل نظرات انتخابی به برسی شده"
+
+#: .\admin.py:10
+msgid "Selected comments were read."
+msgstr "نظرات انتخابی به خوانده شده تبدیل شدند."
+
+#: .\admin.py:13
+msgid "Convert to unread comments."
+msgstr "تبدیل نظرات انتخابی به خوانده نشده."
+
+#: .\admin.py:16
+msgid "Selected comments were unread."
+msgstr "نظرات انتخابی به خوانده نشده تبدیل شدند."
+
+#: .\admin.py:19
+msgid "Publish selected comments."
+msgstr "انتشار موارد انتخابی"
+
+#: .\admin.py:22
+msgid "The selected comments were published."
+msgstr "نظرات انتخابی منتشر شدند."
+
+#: .\admin.py:25
+msgid "Draft Selected comments"
+msgstr "پیش‌نویس نظرات انتخابی"
+
+#: .\admin.py:28
+msgid "The selected comments were drafted."
+msgstr "نظرات انتخابی پیش‌نویس شدند."
+
+#: .\apps.py:8
+msgid "Comment"
+msgstr "نظرات"
+
+#: .\models.py:10
+msgid "comments"
+msgstr "نظرات"
+
+#: .\models.py:11 .\models.py:15 .\models.py:43
+msgid "comment"
+msgstr "نظر"
+
+#: .\models.py:16 .\models.py:42
+msgid "recommend"
+msgstr "پاسخ نظر"
+
+#: .\models.py:17
+msgid "full name"
+msgstr "نام"
+
+#: .\models.py:18
+msgid "email"
+msgstr "ایمیل"
+
+#: .\models.py:19
+msgid "news"
+msgstr "خبر"
+
+#: .\models.py:20
+msgid "status publish"
+msgstr "وضعیت انتشار"
+
+#: .\models.py:21
+msgid "is ready?"
+msgstr "آیا بررسی شده؟"
+
+#: .\models.py:22
+msgid "created date"
+msgstr "تاریخ ایجاد"
+
+#: .\models.py:23
+msgid "update date"
+msgstr "تاریخ بروزرسانی"
+
+#: .\templates\comment\comment_form.html:40
+msgid "send"
+msgstr "ارسال"
+
+#: .\templates\comment\commnet.html:4
+msgid "Comments"
+msgstr "نظرات"
+
+#: .\templates\comment\commnet.html:26
+msgid "Admin reply to"
+msgstr "پاسخ مدیر به "
+
+#: .\templates\comment\commnet.html:44
+msgid "Express your vision."
+msgstr "دیدگاه خود را بیان کنید."

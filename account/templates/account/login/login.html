@@ -1,0 +1,45 @@
+<!DOCTYPE html>{% load i18n %}{% load static %}{% load trans_page %}
+<html lang={% if LANGUAGE_CODE == "fa" %}"fa-ir">{% else %}"en-us">{% endif %}
+<head>
+    <title>{% block title %}{% trans "Log in" %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{% static 'base/images/favicon.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'account/style.css' %}">
+</head>
+<style>
+    {% if LANGUAGE_CODE == 'fa' %}
+        .captcha {
+            left: 2px !important;
+        }
+        body {
+            direction: rtl;
+        }
+    {% else %}
+        .captcha {
+            right: 2px !important;
+        }
+        body {
+            direction: ltr;
+        }
+    {% endif %}
+</style>
+<body>
+{% block style %}{% endblock %}
+{% block body %}
+    <div class="limiter">
+        <div class="container-login100 bg">
+            <div class="wrap-login100 p-l-20 p-r-20 p-t-30 p-b-30">
+                {% block form_block %}{% include 'account/login/form_login.html' %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    <div class="chane-language">
+        <i class="fa fa-language">
+            <a class="lang-link" href="{% trans_page request 'en' %}">En</a>
+            <a class="lang-link" href="{% trans_page request 'fa' %}">Fa</a>
+        </i>
+    </div>
+{% endblock %}
+</body>
+</html>

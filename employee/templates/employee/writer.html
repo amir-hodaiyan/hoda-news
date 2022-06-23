@@ -1,0 +1,125 @@
+{% extends 'base/base.html' %}{% load home_tag i18n  static %}
+{% block title %}{% trans 'Profile: ' %}{{ writer }}{% endblock %}
+{% block body %}
+    <div class="gap-40"></div>
+    <div class='container'>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="author-box">
+                    <div class="author-img flout-bidi">
+                        <img src="{{ writer.profile_photo.url }}" alt="{{ writer }}">
+                    </div>
+                    <br>
+                    <div>
+                        <h3 style="text-align: center;">
+                            {{ writer|capfirst }}
+                            <p class="small">
+                                {% trans 'register date: '|capfirst %}
+                                {% jalali_date writer.membership_date LANGUAGE_CODE %}
+                            </p>
+                        </h3>
+                        <div class="author-counter not-flout-bidi">
+                            <span>{{ writer.news_writer.count }} {% trans 'news' %}</span>
+                        </div>
+
+                        <p class="flout-bidi" style="text-align: justify">{{ writer.bio }}</p>
+                    </div>
+                </div>
+                {% if list_post_every_writer %}
+                    <div class="row">
+                        <h3 class="block-title"><span>{% trans 'last news' %}</span></h3>
+                        {% for post_every_writer in list_post_every_writer %}
+                            <div class="col-md-6 col-sm-6 flout-bidi">
+                                <div class="post-block-style post-grid clearfix">
+                                    <div class="post-thumb">
+                                        <a href="{{ post_every_writer.get_absolute_url }}">
+                                            <img class="img-responsive" style='height: 180px; width:360px'
+                                                 src="{{ post_every_writer.image.url }}"
+                                                 alt="{{ post_every_writer.title }}">
+                                        </a>
+                                    </div>
+                                    <a class="post-cat"
+                                       href="{% url 'Home:category' post_every_writer.get_slug_category %}">
+                                        {{ post_every_writer.get_category }}
+                                    </a>
+                                    <div class="post-content">
+                                        <h2 class="post-title title-small" style="height:55px">
+                                            <a href="{{ post_every_writer.get_absolute_url }}">
+                                                {{ post_every_writer.title }}
+                                            </a>
+                                        </h2>
+                                        <p>{{ post_every_writer.body |truncatewords:25 }}</p>
+                                        <div class="post-meta">
+                                        <span class="post-author">
+                                            <a href="{{ request.path }}?w={{ id_writer }}">
+                                            <i class="fa fa-pencil"></i>
+                                                {{ post_every_writer.writer }}
+                                            </a>
+                                        </span>
+                                            <span>{% jalali_date writer.membership_date LANGUAGE_CODE %} </span>
+                                        </div>
+                                    </div><!-- Post content end -->
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% if list_post_every_writer.has_next or list_post_every_writer.has_previous %}
+                    <div class="paging" style="background-color: rebeccapurple">
+                        <ul class="pagination" style="float: right ;margin-right: 48%">
+                            {% if list_post_every_writer.has_previous %}
+                                <li class="next_video">
+                                    <a href="{{ request.path }}?p={{ list_post_every_writer.previous_page_number }}">
+                                        {{ list_post_every_writer.previous_page_number }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                            <li class="active current_page"><span>{{ list_post_every_writer.number }}</span></li>
+                            {% if list_post_every_writer.has_next %}
+                                <li class="before_video">
+                                    <a href="{{ request.path }}?p={{ list_post_every_writer.next_page_number }}">
+                                        {{ list_post_every_writer.next_page_number }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                {% endif %}
+                <div class="gap-30"></div>
+            </div>
+            {% if most_views %}
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="widget color-orange">
+                        <h3 class="block-title"><span>{% trans 'The most visited' %}</span></h3>
+                        <div class="list-post-block">
+                            <ul class="list-post">
+                                {% for most_view in most_views %}
+                                    <li class="clearfix ">
+                                        <div class="post-block-style post-float clearfix">
+                                            <div class="post-thumb">
+                                                <img class="img-responsive" src="{{ most_view.image.url }}" alt="PIC">
+                                            </div>
+                                            <div class="post-content">
+                                                <h2 class="post-title title-small">
+                                                    <a href="{{ most_view.get_absolute_url }}">
+                                                        {{ most_view.title }}
+                                                    </a>
+                                                </h2>
+                                                <div class="post-meta">
+                                                <span class="post-date">
+                                                         {% jalali_date writer.membership_date LANGUAGE_CODE %}
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% include 'include/footer.html' %}
+{% endblock %}

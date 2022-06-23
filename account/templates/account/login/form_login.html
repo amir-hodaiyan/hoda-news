@@ -1,0 +1,52 @@
+{% load i18n static widget_tweaks %}
+<form class="login100-form validate-form" method="post">{% csrf_token %}
+    {% block heder-login-form %}
+        <span class="login100-form-title p-b-10">{% trans 'Log in' %}</span>
+    {% endblock %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="p-b-9">
+                <span class="txt1">{% trans 'username' %}</span>
+            </div>
+            <div class="wrap-input100">
+                {{ form.username|add_class:'input100' }}
+                <span class="focus-input100"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class=" p-b-9">
+                <span class="txt1">{% trans 'password' %}</span>
+                <a href="{% url 'Account:forget' %}" class="txt2 bo1 m-l-5">{% trans 'Reset' %}</a>
+            </div>
+            <div class="wrap-input100 ">
+                {{ form.password|add_class:'input100' }}
+                <span class="focus-input100"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row captcha-box">
+        {{ form.captcha|add_class:'input100' }}
+    </div>
+    {% if form.errors %}
+        <ul class="ul-error">
+            <h5 style="color: red;margin-bottom: 5px">{% trans 'The following information is invalid:' %}</h5>
+            {% for err in form.errors %}
+                {% if err == 'captcha' %}
+                    <li class="li_error">{{ form.errors.captcha }}</li>
+                {% elif err == '__all__' %}
+                    <li class="li_error">{{ form.non_field_errors }}</li>
+                {% elif err == 'username' %}
+                    <li class="li_error">{{ form.errors.username }}</li>
+                {% elif err == 'password' %}
+                    <li class="li_error">{{ form.errors.password }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% include 'account/submit.html' %}
+    <div class="w-full text-center p-t-20">
+        <span class="txt2">{% trans 'still not registered?' %}</span>
+        <a href="{% url 'Account:sign_up' %}" class="txt2 bo1">{% trans 'Register' %}</a>
+    </div>
+</form>
+

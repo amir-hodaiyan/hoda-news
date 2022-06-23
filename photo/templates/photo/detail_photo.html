@@ -1,0 +1,130 @@
+<!DOCTYPE html>{% load static  %}
+<html lang={% if LANGUAGE_CODE == 'fa' %}"fa-ir">{% else %}"en-us">{% endif %}
+<head>
+    <title>{{ body_photo_news.title }}</title>
+    <link rel="icon" href="{% static 'base/images/favicon.ico' %}" type="image/x-icon">
+    <script src="{% static 'photo/script/jquery.min.js' %}"></script>
+    <script src="{% static 'photo/script/jquery.slicebox.js' %}"></script>
+    <script src="{% static 'photo/script/jquery.seven.min.js' %}"></script>
+    <script src="{% static 'photo/script/jquery.easing.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'base/js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'photo/css/sevenslider.css' %}"/>
+    <link rel="stylesheet" href="{% static 'photo/css/skins/clean.css' %}"/>
+    <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static  'base/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/responsive.css' %}">
+    <style>
+        {% if LANGUAGE_CODE == 'fa' %}
+            .captcha {
+                left: 4px;
+                right: unset;
+            }
+            body, .lang_bidi {
+                direction: rtl;
+                text-align: right;
+            }
+            .owl-nav {
+                left: 0;
+            }
+            .flout-bidi {
+                float: right !important;
+            }
+            .item-top-hot-news {
+                float: right !important;
+                text-align: right !important;
+                direction: rtl !important;
+            }
+            .not-flout-bidi {
+                float: left !important;
+            }
+        {% else %}
+            body, .lang_bidi {
+                direction: ltr !important;
+                text-align: left !important;
+            }
+            .owl-nav {
+                right: 0;
+            }
+            .flout-bidi {
+                float: left !important;;
+            }
+            .not-flout-bidi {
+                float: right !important;;
+            }
+            .item-top-hot-news {
+                float: left !important;;
+                margin-left: 90px;
+                text-align: left !important;;
+                direction: ltr !important;;
+            }
+        {% endif %}
+
+        .site-nav-inner {
+            border-top: 3px solid #ec0000;
+            border-bottom: 1px solid #dedede;
+        }
+    </style>
+</head>
+<body>
+<section class="featured-post-area no-padding">
+    <div class="container">
+        <script type="text/javascript" language="javascript">
+            $(document).ready(function () {
+                var tb = $(".seven_container").sevenslider({
+                    width: 774,
+                    height: 436,
+                    fullwidth: false,
+                    animation: 0,
+                    automation: true,
+                    autointerval: 3,
+                    progress: true,
+                    progresstype: "linear",
+                    bullet: true,
+                    carousel: false,
+                    circular: true,
+                    responsive: true,
+                    swipe: true,
+                    keyboard: true,
+                    skin: "clean",
+                    lightbox: true
+                });
+
+            });
+        </script>
+        <script type="text/javascript" language="javascript">
+            $(document).ready(function () {
+                $('.bullet').attr('checked', true);
+                $('.responsive').attr('checked', true);
+                $('.circular').attr('checked', true);
+                $('.swipe').attr('checked', true);
+                $('.keyboard').attr('checked', true);
+                $('.automate').attr('checked', true);
+                $('.lightbox').attr('checked', true);
+                $('.p_type').attr('checked', true);
+            });
+        </script>
+        {% include 'include/top_navbar.html' %}
+        {% include 'include/header.html' %}
+        {% include 'include/category_navbar.html' %}
+        <div class="gap-40"></div>
+        <div class="seven_container" style="direction: ltr">
+            <div id="seven_viewport">
+                <div class="seven_slider">
+                    {% for photo_news in detail_photo_news %}
+                        <div class="seven_slide">
+                            <a class="seven_slide_title lang_bidi">{{ body_photo_news.body }}</a>
+                            <img src="{{ photo_news.image.url }}" alt="{{ body_photo_news.title }}">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <a id="left_btn" class="seven_nav"></a>
+            <a id="right_btn" class="seven_nav right_btn"></a>
+        </div>
+    </div>
+    <div class="gap-40"></div>
+</section>
+{% include 'include/footer.html' %}
+</body>
+</html>

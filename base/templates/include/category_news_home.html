@@ -1,0 +1,45 @@
+{% load home_tag %}{% load i18n %}
+{% for category_ in list_category_published_in_home %}
+    <div class="latest-news block color-red">
+        <a class="title-category" target="_blank" href="{% url 'Home:category' category_.slug %}">
+            <h3 class="block-title"><span>{{ category_.title }}</span></h3>
+        </a>
+        <div id="latest-news-slide" class="owl-carousel owl-theme latest-news-slide">
+            {% for news_in_category in category_.news.all|slice:number_of_news_in_category %}
+                {% if news_in_category.status %}
+                    <div class="item">
+                        <ul class="list-post">
+                            <li class="clearfix">
+                                <div class="post-block-style clearfix">
+                                    <div class="post-thumb">
+                                        <a href="{{ news_in_category.get_absolute_url }}">
+                                            <img class="img-responsive category-image"
+                                                 src="{{ news_in_category.image.url }}"
+                                                 alt="{{ news_in_category.title }}">
+                                        </a>
+                                    </div>
+                                    <div class="post-content post_content_category_news">
+                                        <h4 class="post-title title-small">
+                                            <a href="{{ news_in_category.get_absolute_url }}">
+                                                {{ news_in_category.title }}
+                                            </a>
+                                        </h4>
+                                        <div class="post-meta post_meta_category_news_home item-top-hot-news">
+                                            <span class="post-author meta-post_">
+                                                <a href="{% url 'Employee:writer' news_in_category.writer.id %}">
+                                                    {% trans 'writer: ' %}{{ news_in_category.writer }}
+                                                </a>
+                                            </span>
+                                            <span class="post-date"> {% jalali_date news_in_category.updated LANGUAGE_CODE %}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="gap-40"></div>
+{% endfor %}

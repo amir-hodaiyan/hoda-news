@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}{% load i18n %}
+{% block title %}{% trans 'ContactUS' %}{% endblock %}
+{% block body %}
+    <section class="block-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h3>{% trans 'contact us' %}</h3>
+                    <p>{% trans 'Use the form below to send any comments and criticisms.' %}</p>
+                    {% include 'contact/form.html' %}
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'include/footer.html' %}
+{% endblock %}

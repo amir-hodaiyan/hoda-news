@@ -1,0 +1,46 @@
+{% if comments.all %}{% load i18n %}
+    <div id="comments" class="color-red">
+        <h3 class="block-title">
+            <span style="direction: ltr">{% trans "Comments" %}: {{ comments.count }}</span>
+        </h3>
+        <ul class="comments-list">
+            {% for comment_ in comments.all %}
+                <li class="comment-li">
+                    <div class="comment">
+                        <div class="comment-body c1">
+                            <div class="meta-data">
+                                <span class="comment-author ">{{ comment_.full_name }}</span>
+                                <span class="comment-date pull-right">{{ comment_.jcreated }}</span>
+                            </div>
+                            <div class="comment-content">
+                                <p>{{ comment_.comment }}</p>
+                            </div>
+                        </div>
+                    </div><!-- Comments end -->
+                    {% if comment_.re_comment %}
+                        <ul class="comments-reply">
+                            <li>
+                                <div class="comment">
+                                    <div class="comment-body ">
+                                        <div class="meta-data">
+                                            <span style="font-size: 12px">{% trans 'Admin reply to' %}</span>
+                                            <span class="comment-author">{{ comment_.full_name }}</span>
+                                            <span class="comment-date pull-right">{{ comment_.jupdate }}</span>
+                                        </div>
+                                        <div class="comment-content ">
+                                            <p>{{ comment_.re_comment }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+<div class="comments-form">
+    <h3 class="title-normal lang_bidi">{% trans 'Express your vision.' %}</h3>
+    {% include 'comment/comment_form.html' %}
+</div>

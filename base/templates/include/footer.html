@@ -1,0 +1,112 @@
+{% load home_tag  i18n %}
+{% if editor_selection %}
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="row m-top-20">
+                <div class="col-md-9 col-xs-12 footer-widget flout-bidi">
+                    <h3 class="widget-title">{% trans 'Editor selection' %}</h3>
+                    <div class="list-post-block">
+                        <ul class="list-post">
+                            {% for editor_select in editor_selection %}
+                                <li class="clearfix">
+                                    <div class="post-block-style post-float clearfix">
+                                        <div class="post-thumb flout-bidi">
+                                            <a href="{{ editor_select.get_absolute_url }}" target="_blank">
+                                                <img class="img-responsive border-red"
+                                                     src="{{ editor_select.image.url }}"
+                                                     alt="{{ editor_select.title }}">
+                                            </a>
+                                        </div>
+                                        <div class="post-content">
+                                            <p class="post-title title-small">
+                                                <a href="{{ editor_select.get_absolute_url }}" style="margin-left: 8px">
+                                                    {{ editor_select.title }}
+                                                </a>
+                                            </p>
+                                            <div class="post-meta">
+                                                <span class="post-date">
+                                                    {% jalali_date editor_select.updated LANGUAGE_CODE %}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-xs-12 footer-widget widget-categories not-flout-bidi">
+                    <h3 class="widget-title">{% trans 'categories' %}</h3>
+                    <ul class="pad-r-0">
+                        {% for category in categories_footer %}
+                            <li>
+                                {% if category.slug == 'video-service' %}
+                                    <a href="{% url 'Home:category' category.slug %}">
+                                        <span class="flout-bidi">{{ category.title }}</span>
+                                    </a>
+                                    <span class="not-flout-bidi">{{ category.video.count }}</span><br>
+                                {% elif category.slug == 'photo-service' %}
+                                    <a href="{% url 'Home:photo' %}">
+                                        <span class="flout-bidi">{{ category.title }}</span>
+                                    </a>
+                                    <span class="not-flout-bidi">{{ photo_service_count }}</span><br>
+                                {% else %}
+                                    <a href="{% url 'Home:category' category.slug %}">
+                                        <span class="flout-bidi">{{ category.title }}</span>
+                                    </a>
+                                    <span class="not-flout-bidi">{{ category.news.count }}</span><br>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endif %}
+{% if footer %} <!-- Footer Info Content -->
+    <footer>
+        <div class="footer-info text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        {% for foo in footer %}
+                            <div class="footer-info-content">
+                                <div class="footer-logo">
+                                    <img class="img-responsive" src="{{ foo.logo.url }}" alt="logo-site">
+                                </div>
+                                <p>{{ foo.description }}</p>
+                                <p class="footer-info-phone">
+                                    <i class="fa fa-phone"></i>
+                                    <span class="ltr_text">{{ foo.tel }}</span>
+                                </p>
+                                <p class="footer-info-email">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="ltr_text">{{ foo.email }}</span>
+                                </p>
+                                <ul class="un-styled footer-social">
+                                    <li>
+                                        {% for social_network in social_networks %}
+                                            <a title="{{ social_network.title }}" href="{{ social_network.address }}">
+                                                <span class="social-icon">
+                                                    <i class="{{ social_network.class_icon }}"></i>
+                                                </span>
+                                            </a>
+                                        {% endfor %}
+                                    </li>
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endif %}
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <span class="copyright-text">{% trans 'All rights reserved for this website.' %}</span>
+        </div>
+    </div>
+</div>
